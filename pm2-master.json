@@ -1,0 +1,10 @@
+{
+    "apps": [{
+        "name": "ryuko-master",
+        "script": "index.js",
+        "watch": false,
+        "merge_logs": false,
+        "output": "./logs/ryuko-master-output.log",
+        "error": "./logs/ryuko-master-error.log"
+    }]
+}

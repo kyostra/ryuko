@@ -1,0 +1,15 @@
+{
+    "apps": [{
+        "name": "ryuko",
+        "script": "src/ryuko.js",
+        "exec_mode": "cluster",
+        "instances": "1",
+        "watch": false,
+        "args": [
+            "--color"
+        ],
+        "output": "./logs/ryuko-output.log",
+        "error": "./logs/ryuko-error.log",
+        "autorestart": false
+    }]
+}
