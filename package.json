@@ -1,6 +1,6 @@
 {
   "name": "ryuko",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Your new general purpose Discord bot",
   "main": "./src/ryuko.js",
   "scripts": {
