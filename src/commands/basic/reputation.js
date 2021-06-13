@@ -41,7 +41,7 @@ class Reputation extends Command {
                 } }).catch(this.logger.error);
             }
 
-            if (moment().diff(u.currencyCD, 'hours', true) >= 23.00) {
+            if (moment().diff(u.reputationCD, 'hours', true) >= 23.00) {
                 client.mongodb.models.users.findOneAndUpdate({ serverID: msg.channel.guild.id, userID: user }, { $set: { reputation: u.reputation + 1, reputationCD: new Date() } }, (error, uu) => {
                     if (error || !uu) {
                         return responder.send(`${msg.author.mention} couldn't find Guild or User (BOTS HAVE NO PROFILES)`, { embed: {
@@ -68,7 +68,7 @@ class Reputation extends Command {
                         } }).catch(this.logger.error);
                     }
 
-                    const ccd = moment(uuu.currencyCD);
+                    const ccd = moment(uuu.reputationCD);
                     const ccd2 = moment(ccd.add(23, 'hours'));
                     const timeToCD = ccd2.subtract(moment()).format('hh[h] mm[m] ss[s]');
 
