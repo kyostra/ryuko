@@ -14,7 +14,7 @@ class StarManager extends Module {
         this.db = this._client.mongodb;
     }
 
-    onReactionAdd(message, emoji, userID) {
+    onReactionAdd(message, emoji, member) {
         const imageType = (attachment) => {
             const imageLink = attachment.split('.');
             const typeOfImage = imageLink[imageLink.length - 1];
@@ -29,7 +29,7 @@ class StarManager extends Module {
         //     return;
         // }
 
-        if (message.author.id === userID) {
+        if (message.author.id === member) {
             this.send(`${message.channel.id}`, `${message.author.mention} You cannot star your own message 💢`);
         }
 
