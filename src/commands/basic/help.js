@@ -44,7 +44,7 @@ class Help extends Command {
                 },
                 {
                     name: 'search',
-                    value: '`catgirl`, `osu`, `overwatch`, `reddit`'
+                    value: '`catgirl`, `osu`, `reddit`'
                 }],
                 timestamp: new Date(),
                 footer: {
@@ -1141,39 +1141,6 @@ class Help extends Command {
                 {
                     name: 'Search Types',
                     value: '<none>, profile, best, recent',
-                    inline: false
-                }],
-                timestamp: new Date(),
-                footer: {
-                    icon_url: msg.author.dynamicAvatarURL(),
-                    text: footerText
-                }
-            } }).catch(this.logger.error);
-        } else if (command === 'overwatch') {
-            return responder.send(' ', { embed: {
-                color: client.ryukoColor,
-                title: 'Help for Overwatch (search)',
-                description: 'Grabs Overwatch profile info **(usernames are case sensitive)**',
-                fields: [{
-                    name: 'Usage',
-                    value: 's.overwatch type platform region Username#1234',
-                    inline: false
-                },
-                {
-                    name: 'Example',
-                    value: 's.overwatch p pc na Surefour#2559',
-                    inline: false
-                },
-                {
-                    name: 'Extra Args',
-                    value: '**Types -**\nprofile, p | competitive, comp, c | quickplay, quick, q' +
-                    '\n**Platforms -**\npc, xbl, psn' +
-                    '\n**Regions** -\nna, eu, kr, cn, global',
-                    inline: false
-                },
-                {
-                    name: 'Aliases',
-                    value: 's.overwatch, s.ow',
                     inline: false
                 }],
                 timestamp: new Date(),
