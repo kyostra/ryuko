@@ -93,16 +93,16 @@ class Profile extends Command {
                 ctx.fillStyle = '#E5E5E5';
                 ctx.fillText(u.level, 86, 238);
 
-                // Total XP
+                // Reputation
                 ctx.font = '14px Roboto';
                 ctx.fillStyle = '#E5E5E5';
                 ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
-                ctx.fillText('Total EXP', 12, 261);
+                ctx.fillText('Reputation', 12, 261);
 
-                // Total XP Number
+                // Reputation Number
                 ctx.font = '14px Roboto';
                 ctx.fillStyle = '#E5E5E5';
-                ctx.fillText(Math.floor((u.level - 1) * 2 * 3.65 * 22) + u.xp, 86, 261);
+                ctx.fillText(u.reputation, 86, 261);
 
                 // Currency
                 ctx.font = '14px Roboto';
