@@ -75,7 +75,6 @@ ryuko.on('ready', () => {
         { type: 3, name: 'you type' },
         { type: 0, name: 'the saxophone' },
         { type: 2, name: 'your voices' },
-        { type: 3, name: 'some lewdies' },
         { type: 0, name: 'a fun game' },
         { type: 3, name: 'anime' },
         { type: 0, name: 'the piano' },
