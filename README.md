@@ -1,7 +1,6 @@
 <h1 align="center">Ryuko 流子</h1>
 <h3 align="center">A general purpose Discord bot</h3>
 <p align="center">
-    <a title="CodeClimate" href="https://codeclimate.com/github/kyostra/ryuko/maintainability"><img src="https://api.codeclimate.com/v1/badges/3cb373a64e81a2386ec7/maintainability" alt="CodeClimate" /></a>
     <a title="TravisCI" href="https://travis-ci.org/kyostra/ryuko"><img src="https://img.shields.io/travis/kyostra/ryuko.svg?style=flat" alt="TravisCI" /></a>
     <a title="DavidDM" href="https://david-dm.org/kyostra/ryuko"><img src="https://img.shields.io/david/kyostra/ryuko.svg?style=flat" alt="DavidDM" /></a>
     <a title="license" href="https://github.com/kyostra/ryuko/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kyostra/ryuko.svg" alt="License" /></a>
