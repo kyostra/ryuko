@@ -37,7 +37,7 @@ class StarManager extends Module {
             return;
         }
 
-        if (message.content.startsWith('s.')) {
+        if (message.content.startsWith('r.')) {
             return;
         }
 

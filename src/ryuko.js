@@ -71,7 +71,7 @@ ryuko.on('ready', () => {
     * 3 = Watching
     */
     const statuses = [
-        { type: 0, name: 'type s.help for help' },
+        { type: 0, name: 'type r.help for help' },
         { type: 3, name: 'you type' },
         { type: 0, name: 'the saxophone' },
         { type: 2, name: 'your voices' },

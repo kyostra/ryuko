@@ -21,7 +21,7 @@ class Help extends Command {
             return responder.send(msg.author.mention, { embed: {
                 color: client.ryukoColor,
                 title: 'Ryuko, Help!',
-                description: 'for further info, do **s.help command_name** (ex. s.help catgirl)',
+                description: 'for further info, do **r.help command_name** (ex. r.help catgirl)',
                 author: {
                     name: 'Ryuko',
                     icon_url: client.user.avatarURL
@@ -58,17 +58,17 @@ class Help extends Command {
                 description: 'Displays useful information about Ryuko',
                 fields: [{
                     name: 'Usage',
-                    value: 's.about',
+                    value: 'r.about',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.about',
+                    value: 'r.about',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.about, s.info',
+                    value: 'r.about, r.info',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -84,17 +84,17 @@ class Help extends Command {
                 description: 'Gets the avatar of a user',
                 fields: [{
                     name: 'Usage',
-                    value: 's.avatar @user or s.avatar',
+                    value: 'r.avatar @user or r.avatar',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.avatar @Ryuko or s.avatar',
+                    value: 'r.avatar @Ryuko or r.avatar',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.avatar, s.profilepicture, s.profilepic',
+                    value: 'r.avatar, r.profilepicture, r.profilepic',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -110,12 +110,12 @@ class Help extends Command {
                 description: 'Displays useful information about Ryuko',
                 fields: [{
                     name: 'Usage',
-                    value: 's.help or s.help <command name>',
+                    value: 'r.help or r.help <command name>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.help or s.help ratewaifu',
+                    value: 'r.help or r.help ratewaifu',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -131,12 +131,12 @@ class Help extends Command {
                 description: 'Displays the bot\'s ping to Discord servers',
                 fields: [{
                     name: 'Usage',
-                    value: 's.ping',
+                    value: 'r.ping',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.ping',
+                    value: 'r.ping',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -152,12 +152,12 @@ class Help extends Command {
                 description: 'Displays a user\'s profile, bots do not have one because they are not stored in the database',
                 fields: [{
                     name: 'Usage',
-                    value: 's.profile\ns.profile @user',
+                    value: 'r.profile\ns.profile @user',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.profile\ns.profile @friend',
+                    value: 'r.profile\ns.profile @friend',
                     inline: false
                 },
                 {
@@ -178,17 +178,17 @@ class Help extends Command {
                 description: 'Give someone some reputation',
                 fields: [{
                     name: 'Usage',
-                    value: 's.reputation @user',
+                    value: 'r.reputation @user',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.reputation @friend',
+                    value: 'r.reputation @friend',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.reputation, s.rep',
+                    value: 'r.reputation, r.rep',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -204,12 +204,12 @@ class Help extends Command {
                 description: 'Adds, removes, and lists roles. Roles above ryuko\'s role are not addable/removeable',
                 fields: [{
                     name: 'Usage',
-                    value: 's.role add <role>, s.role remove <role> or s.role list',
+                    value: 'r.role add <role>, r.role remove <role> or r.role list',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.role add nsfw, s.role remove nsfw, s.role list',
+                    value: 'r.role add nsfw, r.role remove nsfw, r.role list',
                     inline: false
                 },
                 {
@@ -233,12 +233,12 @@ class Help extends Command {
                 '\nYou can also react to messages with the ⭐ emoji to add them to the starboard',
                 fields: [{
                     name: 'Usage',
-                    value: 's.star add <message_id>\ns.star show <message_id>',
+                    value: 'r.star add <message_id>\ns.star show <message_id>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.star add 12312312311',
+                    value: 'r.star add 12312312311',
                     inline: false
                 },
                 {
@@ -259,12 +259,12 @@ class Help extends Command {
                 description: 'Displays stats about Ryuko',
                 fields: [{
                     name: 'Usage',
-                    value: 's.stats',
+                    value: 'r.stats',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.stats',
+                    value: 'r.stats',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -280,17 +280,17 @@ class Help extends Command {
                 description: 'Shows info about the server',
                 fields: [{
                     name: 'Usage',
-                    value: 's.serverinfo',
+                    value: 'r.serverinfo',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.serverinfo',
+                    value: 'r.serverinfo',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.serverinfo, s.server',
+                    value: 'r.serverinfo, r.server',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -306,17 +306,17 @@ class Help extends Command {
                 description: 'Sets the background for your profile',
                 fields: [{
                     name: 'Usage',
-                    value: 's.setbackground <background>',
+                    value: 'r.setbackground <background>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.setbackground whitemarble',
+                    value: 'r.setbackground whitemarble',
                     inline: false
                 },
                 {
                     name: 'Extra Args',
-                    value: 'To reset your bio do `s.setbio -reset`' +
+                    value: 'To reset your bio do `r.setbio -reset`' +
                     '\nBackgrounds: `default`, `whitemarble`, `blackmarble`',
                     inline: false
                 }],
@@ -333,17 +333,17 @@ class Help extends Command {
                 description: 'Sets the bio for your profile',
                 fields: [{
                     name: 'Usage',
-                    value: 's.setbio <bio text>',
+                    value: 'r.setbio <bio text>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.setbio I am not a weeb',
+                    value: 'r.setbio I am not a weeb',
                     inline: false
                 },
                 {
                     name: 'Extra Args',
-                    value: 'To reset your bio do `s.setbio -reset`',
+                    value: 'To reset your bio do `r.setbio -reset`',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -359,17 +359,17 @@ class Help extends Command {
                 description: 'Shows info about a user',
                 fields: [{
                     name: 'Usage',
-                    value: 's.userinfo, s.userinfo @user or s.userinfo <user_id>',
+                    value: 'r.userinfo, r.userinfo @user or r.userinfo <user_id>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.userinfo, s.userinfo @Ryuko or s.userinfo 12345678910111213141',
+                    value: 'r.userinfo, r.userinfo @Ryuko or r.userinfo 12345678910111213141',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.userinfo, s.user',
+                    value: 'r.userinfo, r.user',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -385,17 +385,17 @@ class Help extends Command {
                 description: 'Shows the Top 10 members in the server for XP',
                 fields: [{
                     name: 'Usage',
-                    value: 's.xpleaderboard',
+                    value: 'r.xpleaderboard',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.xpleaderboard',
+                    value: 'r.xpleaderboard',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.xpleaderboard, s.xplb',
+                    value: 'r.xpleaderboard, r.xplb',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -411,17 +411,17 @@ class Help extends Command {
                 description: 'Bet money, flip a coin, win or lose money',
                 fields: [{
                     name: 'Usage',
-                    value: 's.betflip <amount> <heads/tails/h/t>, s.bf <amount> <heads/tails/h/t>',
+                    value: 'r.betflip <amount> <heads/tails/h/t>, r.bf <amount> <heads/tails/h/t>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.betflip 100 h, s.bf 100 tails',
+                    value: 'r.betflip 100 h, r.bf 100 tails',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.betflip, s.bf',
+                    value: 'r.betflip, r.bf',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -437,17 +437,17 @@ class Help extends Command {
                 description: 'Bet money, roll from 0-100, win or lose money',
                 fields: [{
                     name: 'Usage',
-                    value: 's.betroll <amount>, s.br <amount>',
+                    value: 'r.betroll <amount>, r.br <amount>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.betroll 100, s.br 100',
+                    value: 'r.betroll 100, r.br 100',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.betroll, s.br',
+                    value: 'r.betroll, r.br',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -463,12 +463,12 @@ class Help extends Command {
                 description: 'Get your Universal Basic Income for the day',
                 fields: [{
                     name: 'Usage',
-                    value: 's.daily',
+                    value: 'r.daily',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.daily',
+                    value: 'r.daily',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -484,12 +484,12 @@ class Help extends Command {
                 description: 'Give someone some money',
                 fields: [{
                     name: 'Usage',
-                    value: 's.give <amount> <user>',
+                    value: 'r.give <amount> <user>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.give 100 @User, s.give 100 12345678910111213141',
+                    value: 'r.give 100 @User, r.give 100 12345678910111213141',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -505,17 +505,17 @@ class Help extends Command {
                 description: 'Shows the Top 10 members in the server for curency',
                 fields: [{
                     name: 'Usage',
-                    value: 's.leaderboard',
+                    value: 'r.leaderboard',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.leaderboard',
+                    value: 'r.leaderboard',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.leaderboard, s.lb',
+                    value: 'r.leaderboard, r.lb',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -531,12 +531,12 @@ class Help extends Command {
                 description: 'Ask a question and get an answer back',
                 fields: [{
                     name: 'Usage',
-                    value: 's.8ball <question>',
+                    value: 'r.8ball <question>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.8ball am i a weeb?',
+                    value: 'r.8ball am i a weeb?',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -552,12 +552,12 @@ class Help extends Command {
                 description: 'Gives you advice',
                 fields: [{
                     name: 'Usage',
-                    value: 's.advice',
+                    value: 'r.advice',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.advice',
+                    value: 'r.advice',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -573,12 +573,12 @@ class Help extends Command {
                 description: 'makes your text more a e s t h e t ic',
                 fields: [{
                     name: 'Usage',
-                    value: 's.aesthetic <phrase>',
+                    value: 'r.aesthetic <phrase>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.aesthetic i have no life',
+                    value: 'r.aesthetic i have no life',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -594,12 +594,12 @@ class Help extends Command {
                 description: 'Chooses a random word/phrase given',
                 fields: [{
                     name: 'Usage',
-                    value: 's.choose <word/phrase>, <word/phrase>...',
+                    value: 'r.choose <word/phrase>, <word/phrase>...',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.choose pizza, poutine, koreanbbq',
+                    value: 'r.choose pizza, poutine, koreanbbq',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -615,12 +615,12 @@ class Help extends Command {
                 description: 'Flips a coin',
                 fields: [{
                     name: 'Usage',
-                    value: 's.coinflip or s.coinflip <guess>',
+                    value: 'r.coinflip or r.coinflip <guess>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.coinflip or s.coinflip heads',
+                    value: 'r.coinflip or r.coinflip heads',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -636,12 +636,12 @@ class Help extends Command {
                 description: 'Hug a fellow user~',
                 fields: [{
                     name: 'Usage',
-                    value: 's.hug @user',
+                    value: 'r.hug @user',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.hug @Ryuko',
+                    value: 'r.hug @Ryuko',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -657,17 +657,17 @@ class Help extends Command {
                 description: 'makes your text owo uwu, add "!" adds a face',
                 fields: [{
                     name: 'Usage',
-                    value: 's.owo <phrase>',
+                    value: 'r.owo <phrase>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.owo catgirls are for degenerates!',
+                    value: 'r.owo catgirls are for degenerates!',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.owo, s.uwu',
+                    value: 'r.owo, r.uwu',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -683,12 +683,12 @@ class Help extends Command {
                 description: 'Rate a fellow waifu~',
                 fields: [{
                     name: 'Usage',
-                    value: 's.ratewaifu @user',
+                    value: 'r.ratewaifu @user',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.ratewaifu @Ryuko',
+                    value: 'r.ratewaifu @Ryuko',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -704,12 +704,12 @@ class Help extends Command {
                 description: 'Searches the Urban Dictionary or give a random word',
                 fields: [{
                     name: 'Usage',
-                    value: 's.urban <word> or s.urban',
+                    value: 'r.urban <word> or r.urban',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.urban eGirl or s.urban',
+                    value: 'r.urban eGirl or r.urban',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -725,12 +725,12 @@ class Help extends Command {
                 description: '[USERS WITH MANAGE ROLES PERMISSION] Sets the auto-role for new members',
                 fields: [{
                     name: 'Usage',
-                    value: 's.autorole <options> <role>',
+                    value: 'r.autorole <options> <role>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.autorole add Member\ns.autorole remove',
+                    value: 'r.autorole add Member\ns.autorole remove',
                     inline: false
                 },
                 {
@@ -752,12 +752,12 @@ class Help extends Command {
                 description: '[USERS WITH BAN PERMISSION] Bans a member from the server and set days worth of messages to delete (Default is 0)',
                 fields: [{
                     name: 'Usage',
-                    value: 's.ban @member <days_msg> <reason>',
+                    value: 'r.ban @member <days_msg> <reason>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.ban @RandomTroll 7 being a spam bot',
+                    value: 'r.ban @RandomTroll 7 being a spam bot',
                     inline: false
                 },
                 {
@@ -779,12 +779,12 @@ class Help extends Command {
                 description: '[USERS WITH ADMINISTRATOR PERMISSION] Updates the database manually, usually this is all automatic, only do this if the bot was offline',
                 fields: [{
                     name: 'Usage',
-                    value: 's.census <option>',
+                    value: 'r.census <option>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.census guild\ns.census members',
+                    value: 'r.census guild\ns.census members',
                     inline: false
                 },
                 {
@@ -806,12 +806,12 @@ class Help extends Command {
                 description: '[USERS WITH MANAGE CHANNELS PERMISSION] Sets the channel for goodbye messages',
                 fields: [{
                     name: 'Usage',
-                    value: 's.goodbye (a prompt will appear)',
+                    value: 'r.goodbye (a prompt will appear)',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.goodbye',
+                    value: 'r.goodbye',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -827,12 +827,12 @@ class Help extends Command {
                 description: '[USERS WITH KICK PERMISSION] Kicks a member from the server',
                 fields: [{
                     name: 'Usage',
-                    value: 's.kick @member <reason>',
+                    value: 'r.kick @member <reason>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.kick @RandomTroll being a spam bot',
+                    value: 'r.kick @RandomTroll being a spam bot',
                     inline: false
                 },
                 {
@@ -853,12 +853,12 @@ class Help extends Command {
                 description: '[USERS WITH MANAGE CHANNELS PERMISSION] Sets the channel for logs',
                 fields: [{
                     name: 'Usage',
-                    value: 's.logs on\ns.logs off',
+                    value: 'r.logs on\ns.logs off',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.logs on\ns.logs off',
+                    value: 'r.logs on\ns.logs off',
                     inline: false
                 },
                 {
@@ -880,17 +880,17 @@ class Help extends Command {
                 description: '[USERS WITH MUTE MEMBERS PERMISSION] mute a member',
                 fields: [{
                     name: 'Usage',
-                    value: 's.mute @member <options>',
+                    value: 'r.mute @member <options>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.mute @RandomTroll full',
+                    value: 'r.mute @RandomTroll full',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.mute, s.gag',
+                    value: 'r.mute, r.gag',
                     inline: false
                 },
                 {
@@ -913,17 +913,17 @@ class Help extends Command {
                 description: '[USERS WITH MUTE MEMBERS PERMISSION] unmute a member',
                 fields: [{
                     name: 'Usage',
-                    value: 's.unmute @member <options>',
+                    value: 'r.unmute @member <options>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.unmute @RandomTroll full',
+                    value: 'r.unmute @RandomTroll full',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.unmute, s.ungag',
+                    value: 'r.unmute, r.ungag',
                     inline: false
                 },
                 {
@@ -946,12 +946,12 @@ class Help extends Command {
                 description: '[USERS WITH MANAGE MESSAGES PERMISSION] Cast a poll for members',
                 fields: [{
                     name: 'Usage',
-                    value: 's.poll <topic/message>',
+                    value: 'r.poll <topic/message>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.poll Should we add more roles?',
+                    value: 'r.poll Should we add more roles?',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -967,24 +967,24 @@ class Help extends Command {
                 description: '[USERS WITH MANAGE MESSAGES PERMISSION] Deletes a set amount of messages in a channel',
                 fields: [{
                     name: 'Usage',
-                    value: 's.purge <number> <filter>',
+                    value: 'r.purge <number> <filter>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.purge 10, s.purge 10 @TrollUser, s.purge 5 owo',
+                    value: 'r.purge 10, r.purge 10 @TrollUser, r.purge 5 owo',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 's.purge, s.clear, s.delete',
+                    value: 'r.purge, r.clear, r.delete',
                     inline: false
                 },
                 {
                     name: 'Filters',
                     value: '<word> - any phrase/word specified after the message count will only be deleted' +
                     '\nbots - deletes messages made by a bot' +
-                    '\ncommands - deletes messages with the s. prefix' +
+                    '\ncommands - deletes messages with the r. prefix' +
                     '\n@user - deletes messages from that user' +
                     '\nunpinned - messages that are pinned wont be deleted',
                     inline: false
@@ -1002,12 +1002,12 @@ class Help extends Command {
                 description: '[USERS WITH MANAGE CHANNELS PERMISSION] Changes a channel to enable NSFW content, also "nsfw" cant be the first part of the channel name or it wont add the warning, blame discord. ie - "nsfw-bot-spam"',
                 fields: [{
                     name: 'Usage',
-                    value: 's.setnsfw on\ns.setnsfw off',
+                    value: 'r.setnsfw on\ns.setnsfw off',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.setnsfw on\ns.setnsfw off',
+                    value: 'r.setnsfw on\ns.setnsfw off',
                     inline: false
                 },
                 {
@@ -1029,12 +1029,12 @@ class Help extends Command {
                 description: '[USERS WITH MANAGE ROLES PERMISSION] Adds a role to the database for assignability',
                 fields: [{
                     name: 'Usage',
-                    value: 's.ssar add <rolename>\ns.ssar remove <rolename>',
+                    value: 'r.ssar add <rolename>\ns.ssar remove <rolename>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.ssar add nsfw\ns.ssar remove nsfw',
+                    value: 'r.ssar add nsfw\ns.ssar remove nsfw',
                     inline: false
                 },
                 {
@@ -1056,12 +1056,12 @@ class Help extends Command {
                 description: '[USERS WITH MANAGE CHANNELS PERMISSION] Sets the channel as the starboard',
                 fields: [{
                     name: 'Usage',
-                    value: 's.starbord on\ns.starbord off',
+                    value: 'r.starbord on\ns.starbord off',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.starbord on\ns.starbord off',
+                    value: 'r.starbord on\ns.starbord off',
                     inline: false
                 },
                 {
@@ -1083,12 +1083,12 @@ class Help extends Command {
                 description: '[USERS WITH MANAGE CHANNELS PERMISSION] Sets the channel for welcome messages',
                 fields: [{
                     name: 'Usage',
-                    value: 's.welcome (a prompt will appear)',
+                    value: 'r.welcome (a prompt will appear)',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.welcome',
+                    value: 'r.welcome',
                     inline: false
                 }],
                 timestamp: new Date(),
@@ -1104,12 +1104,12 @@ class Help extends Command {
                 description: 'Sends an image of a catgirl',
                 fields: [{
                     name: 'Usage',
-                    value: 's.catgirl or s.catgirl nsfw',
+                    value: 'r.catgirl or r.catgirl nsfw',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.catgirl or s.catgirl nsfw',
+                    value: 'r.catgirl or r.catgirl nsfw',
                     inline: false
                 },
                 {
@@ -1130,12 +1130,12 @@ class Help extends Command {
                 description: 'Displays Osu profile info and stats',
                 fields: [{
                     name: 'Usage',
-                    value: 's.osu <searchtype> <user>',
+                    value: 'r.osu <searchtype> <user>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.osu cookiezi\ns.osu profile cookiezi',
+                    value: 'r.osu cookiezi\ns.osu profile cookiezi',
                     inline: false
                 },
                 {
@@ -1156,12 +1156,12 @@ class Help extends Command {
                 description: 'Posts the first 5 threads on the frontpage or specified subreddit',
                 fields: [{
                     name: 'Usage',
-                    value: 's.reddit <searchtype>',
+                    value: 'r.reddit <searchtype>',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 's.reddit\ns.reddit frontpage\ns.reddit leagueoflegends',
+                    value: 'r.reddit\ns.reddit frontpage\ns.reddit leagueoflegends',
                     inline: false
                 }],
                 timestamp: new Date(),

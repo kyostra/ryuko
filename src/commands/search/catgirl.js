@@ -61,7 +61,7 @@ class Catgirl extends Command {
 
         if (options === 'nsfw') {
             if (msg.channel.nsfw === false) {
-                return responder.send('Please ask an admin to enable nsfw in this channel (s.setnsfw on)').catch(this.logger.error);
+                return responder.send('Please ask an admin to enable nsfw in this channel (r.setnsfw on)').catch(this.logger.error);
             }
 
             if (site === 'nekos.moe') {

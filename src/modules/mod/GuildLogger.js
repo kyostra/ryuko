@@ -23,8 +23,8 @@ class GuildLog extends Module {
     newGuild(guild) {
         const join = [
             '👋 Hi, I\'m **Ryuko**, a multi-purpose discord bot~',
-            '\nYou can find a list of my commands by using `s.help`!',
-            '\nTo learn more about me, use `s.about`~'
+            '\nYou can find a list of my commands by using `r.help`!',
+            '\nTo learn more about me, use `r.about`~'
         ];
 
         this.logger.info(chalk.red.bold(`Ryuko has joined "${guild.name}" (${guild.id})`));
@@ -43,8 +43,8 @@ class GuildLog extends Module {
         } }).catch(this.logger.error);
 
         this.send(guild.defaultChannel || guild.channels.find(c => c.name === 'general') || guild.id, `${join.toString()}`, {
-            help: '**`s.help`**',
-            about: '**`s.about`**'
+            help: '**`r.help`**',
+            about: '**`r.about`**'
         });
 
         this.db.models.guilds.create({ serverName: guild.name, serverID: guild.id }, (error, add) => {
