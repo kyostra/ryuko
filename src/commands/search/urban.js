@@ -5,7 +5,7 @@ class Urban extends Command {
     constructor (...args) {
         super (...args, {
             name: 'urban',
-            group: 'fun',
+            group: 'search',
             cooldown: 5,
             options: { guildOnly: true },
             usage: [
@@ -23,7 +23,7 @@ class Urban extends Command {
                     author: {
                         name: `Random Urban Dictionary Word! (${json.word})`,
                         url: json.permalink,
-                        icon_url: 'https://pbs.twimg.com/profile_images/838627383057920000/m5vutv9g_400x400.jpg'
+                        icon_url: 'https://pbs.twimg.com/profile_images/1149416858426081280/uvwDuyqS_400x400.png'
                     },
                     color: client.ryukoColor,
                     description: json.definition,
@@ -45,7 +45,7 @@ class Urban extends Command {
                     author: {
                         name: `Definition of ${json.word}`,
                         url: json.permalink,
-                        icon_url: 'https://pbs.twimg.com/profile_images/838627383057920000/m5vutv9g_400x400.jpg'
+                        icon_url: 'https://pbs.twimg.com/profile_images/1149416858426081280/uvwDuyqS_400x400.png'
                     },
                     color: client.ryukoColor,
                     description: json.definition,

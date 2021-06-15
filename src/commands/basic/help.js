@@ -36,7 +36,7 @@ class Help extends Command {
                 },
                 {
                     name: 'fun',
-                    value: '`8ball`, `advice`, `aesthetic`, `choose`, `coinflip`, `hug`, `owo`, `ratewaifu`, `urban`'
+                    value: '`8ball`, `advice`, `aesthetic`, `choose`, `coinflip`, `hug`, `owo`, `ratewaifu`'
                 },
                 {
                     name: 'moderation',
@@ -44,7 +44,7 @@ class Help extends Command {
                 },
                 {
                     name: 'search',
-                    value: '`catgirl`, `osu`, `reddit`'
+                    value: '`catgirl`, `osu`, `reddit`, `urban`'
                 }],
                 timestamp: new Date(),
                 footer: {
@@ -700,7 +700,7 @@ class Help extends Command {
         } else if (command === 'urban') {
             return responder.send(' ', { embed: {
                 color: client.ryukoColor,
-                title: 'Help for Urban (fun)',
+                title: 'Help for Urban (search)',
                 description: 'Searches the Urban Dictionary or give a random word',
                 fields: [{
                     name: 'Usage',
