@@ -66,6 +66,22 @@ class XPManager extends Module {
                                 this.logger.error('Error adding level to user in DB', error);
                             }
                         }).catch(this.logger.error);
+
+                        this.db.models.users.findOne({ serverID: message.channel.guild.id, userID: message.author.id }, (error, uuuu) => {
+                            if (error || !uuuu) {
+                                this.logger.error('Error adding level to user in DB', error);
+                            }
+
+                            this.send(`${message.channel.id}`, `${message.author.mention}`, { embed: {
+                                color: this._client.ryukoColor,
+                                author: {
+                                    name: message.author.username,
+                                    icon_url: message.author.dynamicAvatarURL()
+                                },
+                                description: `Congrats you leveled up to **Level ${uuuu.level}**!`,
+                                timestamp: new Date()
+                            } });
+                        }).catch(this.logger.error);
                     }
                 }).catch(this.logger.error);
             }
