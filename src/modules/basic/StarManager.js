@@ -25,6 +25,8 @@ class StarManager extends Module {
             return attachment;
         };
 
+        const imageURL = message.attachments[0] !== undefined ? imageType(message.attachments[0].url) : '';
+
         // if (message.author.bot === true) {
         //     return;
         // }
@@ -45,32 +47,59 @@ class StarManager extends Module {
             return;
         }
 
-        this.db.models.guilds.findOne({ serverID: message.channel.guild.id }, (error, g) => {
-            if (error) {
-                this.logger.error('Error finding user in DB', error);
-            }
-
-            if (!g || !g.starChannel) {
-                return;
-            }
-
-            const imageURL = message.attachments[0] !== undefined ? imageType(message.attachments[0].url) : '';
-
-            this.send(`${g.starChannel}`, `⭐ <#${message.channel.id}> (${message.id})`, { embed: {
-                color: this._client.ryukoColor,
-                author: {
-                    name: message.author.username,
-                    icon_url: message.author.dynamicAvatarURL()
-                },
-                description: message.cleanContent,
-                image: {
-                    url: imageURL
-                },
-                timestamp: new Date()
-            } }).then(() => {
-                this.send(`${message.channel.id}`, `${message.author.mention} message (${message.id}) has been starred! ⭐`);
-            });
-        }).catch(this.logger.error);
+        if (message.embeds[0]) {
+            this.db.models.guilds.findOne({ serverID: message.channel.guild.id }, (error, g) => {
+                if (error) {
+                    this.logger.error('Error finding user in DB', error);
+                }
+    
+                if (!g || !g.starChannel) {
+                    return;
+                }
+    
+                this.send(`${g.starChannel}`, `⭐ <#${message.channel.id}> (${message.id})`, { embed: {
+                    color: this._client.ryukoColor,
+                    author: {
+                        name: message.author.username,
+                        icon_url: message.author.dynamicAvatarURL()
+                    },
+                    description: `${message.embeds[0].author !== undefined ? message.embeds[0].author.name : ''}
+                    ${message.embeds[0].title !== undefined ? ' ' + message.embeds[0].title : ''}
+                    ${message.embeds[0].description !== undefined ? ' ' + message.embeds[0].description : ''}`,
+                    image: {
+                        url: `${message.embeds[0].image !== undefined ? message.embeds[0].image.url : ''}`
+                    },
+                    timestamp: new Date()
+                } }).then(() => {
+                    this.send(`${message.channel.id}`, `${message.author.mention} message (${message.id}) has been starred! ⭐`);
+                });
+            }).catch(this.logger.error);
+        } else if (!message.embeds[0]) {
+            this.db.models.guilds.findOne({ serverID: message.channel.guild.id }, (error, g) => {
+                if (error) {
+                    this.logger.error('Error finding user in DB', error);
+                }
+    
+                if (!g || !g.starChannel) {
+                    return;
+                }
+    
+                this.send(`${g.starChannel}`, `⭐ <#${message.channel.id}> (${message.id})`, { embed: {
+                    color: this._client.ryukoColor,
+                    author: {
+                        name: message.author.username,
+                        icon_url: message.author.dynamicAvatarURL()
+                    },
+                    description: message.content,
+                    image: {
+                        url: imageURL
+                    },
+                    timestamp: new Date()
+                } }).then(() => {
+                    this.send(`${message.channel.id}`, `${message.author.mention} message (${message.id}) has been starred! ⭐`);
+                });
+            }).catch(this.logger.error);
+        }
     }
 }
 

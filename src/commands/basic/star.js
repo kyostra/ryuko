@@ -45,18 +45,35 @@ class Star extends Command {
                         } }).catch(this.logger.error);
                     }
 
-                    this.send(g.starChannel, `⭐ <#${message.channel.id}> (${message.id})`, { embed: {
-                        color: client.ryukoColor,
-                        author: {
-                            name: message.author.username,
-                            icon_url: message.author.dynamicAvatarURL()
-                        },
-                        description: message.cleanContent,
-                        image: {
-                            url: imageURL
-                        },
-                        timestamp: new Date()
-                    } }).catch(this.logger.error);
+                    if (message.embeds[0]) {
+                        this.send(g.starChannel, `⭐ <#${message.channel.id}> (${message.id})`, { embed: {
+                            color: this._client.ryukoColor,
+                            author: {
+                                name: message.author.username,
+                                icon_url: message.author.dynamicAvatarURL()
+                            },
+                            description: `${message.embeds[0].author !== undefined ? message.embeds[0].author.name : ''}
+                            ${message.embeds[0].title !== undefined ? ' ' + message.embeds[0].title : ''}
+                            ${message.embeds[0].description !== undefined ? ' ' + message.embeds[0].description : ''}`,
+                            image: {
+                                url: `${message.embeds[0].image !== undefined ? message.embeds[0].image.url : ''}`
+                            },
+                            timestamp: new Date()
+                        } }).catch(this.logger.error);
+                    } else if (!message.embeds[0]) {
+                        this.send(g.starChannel, `⭐ <#${message.channel.id}> (${message.id})`, { embed: {
+                            color: client.ryukoColor,
+                            author: {
+                                name: message.author.username,
+                                icon_url: message.author.dynamicAvatarURL()
+                            },
+                            description: message.content,
+                            image: {
+                                url: imageURL
+                            },
+                            timestamp: new Date()
+                        } }).catch(this.logger.error);
+                    }
                     return responder.send(`${msg.author.mention} message (${msgid}) has been starred! ⭐`);
                 });
             });
