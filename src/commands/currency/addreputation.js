@@ -4,9 +4,9 @@ const moment = require('moment');
 class Reputation extends Command {
     constructor (...args) {
         super(...args, {
-            name: 'reputation',
-            group: 'basic',
-            aliases: ['rep'],
+            name: 'addreputation',
+            group: 'currency',
+            aliases: ['+rep'],
             cooldown: 10,
             options: { guildOnly: true },
             usage: [
@@ -27,9 +27,9 @@ class Reputation extends Command {
             user = msg.mentions[0].id;
         }
 
-        if (member === msg.author.id || msg.mentions[0].id === msg.author.id) {
-            return responder.send(`${msg.author.mention} You can't give yourself reputation`).catch(this.logger.error);
-        }
+        // if (member === msg.author.id || msg.mentions[0].id === msg.author.id) {
+        //     return responder.send(`${msg.author.mention} You can't give yourself reputation`).catch(this.logger.error);
+        // }
 
         client.mongodb.models.users.findOne({ serverID: msg.channel.guild.id, userID: user }, (error, u) => {
             if (error || !u) {
@@ -42,7 +42,7 @@ class Reputation extends Command {
             }
 
             if (moment().diff(u.reputationCD, 'hours', true) >= 23.00) {
-                client.mongodb.models.users.findOneAndUpdate({ serverID: msg.channel.guild.id, userID: user }, { $set: { reputation: u.reputation + 1, reputationCD: new Date() } }, (error, uu) => {
+                client.mongodb.models.users.findOneAndUpdate({ serverID: msg.channel.guild.id, userID: user }, { $set: { reputation: u.reputation + 1 } }, (error, uu) => {
                     if (error || !uu) {
                         return responder.send(`${msg.author.mention} couldn't find Guild or User (BOTS HAVE NO PROFILES)`, { embed: {
                             color: client.redColor,
@@ -52,15 +52,26 @@ class Reputation extends Command {
                         } }).catch(this.logger.error);
                     }
 
+                    client.mongodb.models.users.findOneAndUpdate({ serverID: msg.channel.guild.id, userID: msg.author.id }, { $set: { reputationCD: new Date() } }, (error, au) => {
+                        if (error || !au) {
+                            return responder.send(`${msg.author.mention} couldn't find Guild or Message Author (BOTS HAVE NO PROFILES)`, { embed: {
+                                color: client.redColor,
+                                title: 'Reputation.Find Error',
+                                description: `${error}`,
+                                timestamp: new Date()
+                            } }).catch(this.logger.error);
+                        }
+                    }).catch(this.logger.error);
+
                     return responder.send(' ', { embed: {
                         color: client.ryukoColor,
                         description: `${msg.author.mention} You have given reputation to **${uu.userName}**, You can give more in 23 hours`
                     } }).catch(this.logger.error);
                 }).catch(this.logger.error);
             } else {
-                client.mongodb.models.users.findOne({ serverID: msg.channel.guild.id, userID: user }, (error, uuu) => {
+                client.mongodb.models.users.findOne({ serverID: msg.channel.guild.id, userID: msg.author.id }, (error, uuu) => {
                     if (error || !uuu) {
-                        return responder.send(`${msg.author.mention} couldn't find Guild or User (BOTS HAVE NO PROFILES)`, { embed: {
+                        return responder.send(`${msg.author.mention} couldn't find Guild or Message Author (BOTS HAVE NO PROFILES)`, { embed: {
                             color: client.redColor,
                             title: 'Reputation.Find Error',
                             description: `${error}`,

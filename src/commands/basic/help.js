@@ -28,11 +28,11 @@ class Help extends Command {
                 },
                 fields: [{
                     name: 'basic',
-                    value: '`about`, `avatar`, `help`, `ping`, `profile`, `reputation`, `role`, `serverinfo`, `setbackground`, `setbio`, `star`, `stats`, `userinfo`, `xpleaderboard`'
+                    value: '`about`, `avatar`, `help`, `ping`, `profile`, `role`, `serverinfo`, `setbackground`, `setbio`, `star`, `stats`, `userinfo`, `xpleaderboard`'
                 },
                 {
                     name: 'currency',
-                    value: '`betflip`, `betroll`, `daily`, `give`, `leaderboard`'
+                    value: '`betflip`, `betroll`, `daily`, `give`, `leaderboard`, `reputation`'
                 },
                 {
                     name: 'fun',
@@ -174,21 +174,21 @@ class Help extends Command {
         } else if (command === 'reputation') {
             return responder.send(' ', { embed: {
                 color: client.ryukoColor,
-                title: 'Help for Reputation (basic)',
+                title: 'Help for Reputation (currency)',
                 description: 'Give someone some reputation',
                 fields: [{
                     name: 'Usage',
-                    value: 'r.reputation @user',
+                    value: 'r.addreputation @user or r.minusreputation',
                     inline: false
                 },
                 {
                     name: 'Example',
-                    value: 'r.reputation @friend',
+                    value: 'r.+rep @friend or r.-rep @friend',
                     inline: false
                 },
                 {
                     name: 'Aliases',
-                    value: 'r.reputation, r.rep',
+                    value: 'r.addreputation, r.+rep\nr.minusreputation, r.-rep',
                     inline: false
                 }],
                 timestamp: new Date(),
