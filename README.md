@@ -15,6 +15,7 @@ Ryuko is a discord bot created in JavaScript (Node.js). It is currently a projec
 * [Sylphy](https://github.com/pyraxo/sylphy) : Framework for Eris
 * [ESLint](https://eslint.org) : Configurable JavaScript linter tool
 * [PM2](https://pm2.keymetrics.io/) : Process manager for applications in production
+* [MongoDB](https://www.mongodb.com/) : Database for modern applications
 
 ## Setup :
 For `.env` and `.env.example`, leave the values empty for the example file (you need both files).
