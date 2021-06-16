@@ -19,7 +19,7 @@ class Database {
         return new Promise((resolve, reject) => {
             this.ryuko = ryuko;
             Mongoose.Promise = global.Promise;
-            Mongoose.connect(this.URI, { 
+            Mongoose.connect(this.URI, {
                 useNewUrlParser: true,
                 useCreateIndex: true,
                 useFindAndModify: false,
