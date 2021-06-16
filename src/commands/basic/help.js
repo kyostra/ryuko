@@ -44,7 +44,7 @@ class Help extends Command {
                 },
                 {
                     name: 'search',
-                    value: '`catgirl`, `osu`, `reddit`, `urban`'
+                    value: '`anime`, `catgirl`, `manga`, `osu`, `reddit`, `urban`'
                 }],
                 timestamp: new Date(),
                 footer: {
@@ -1162,6 +1162,48 @@ class Help extends Command {
                 {
                     name: 'Example',
                     value: 'r.reddit\ns.reddit frontpage\ns.reddit leagueoflegends',
+                    inline: false
+                }],
+                timestamp: new Date(),
+                footer: {
+                    icon_url: msg.author.dynamicAvatarURL(),
+                    text: footerText
+                }
+            } }).catch(this.logger.error);
+        } else if (command === 'anime') {
+            return responder.send(' ', { embed: {
+                color: client.ryukoColor,
+                title: 'Help for Anime (search)',
+                description: 'Posts information about the queried anime',
+                fields: [{
+                    name: 'Usage',
+                    value: 'r.anime <anime name>',
+                    inline: false
+                },
+                {
+                    name: 'Example',
+                    value: 'r.anime attack on titan',
+                    inline: false
+                }],
+                timestamp: new Date(),
+                footer: {
+                    icon_url: msg.author.dynamicAvatarURL(),
+                    text: footerText
+                }
+            } }).catch(this.logger.error);
+        } else if (command === 'manga') {
+            return responder.send(' ', { embed: {
+                color: client.ryukoColor,
+                title: 'Help for Manga (search)',
+                description: 'Posts information about the queried manga',
+                fields: [{
+                    name: 'Usage',
+                    value: 'r.manga <manga name>',
+                    inline: false
+                },
+                {
+                    name: 'Example',
+                    value: 'r.manga berserk',
                     inline: false
                 }],
                 timestamp: new Date(),

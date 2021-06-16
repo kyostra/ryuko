@@ -38,6 +38,7 @@
     "dotenv-safe": "^8.2.0",
     "eris": "^0.15.1",
     "longjohn": "^0.2.12",
+    "mal-scraper": "^2.11.3",
     "moment": "^2.26.0",
     "mongodb": "^3.5.8",
     "mongoose": "^5.9.16",
