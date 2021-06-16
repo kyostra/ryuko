@@ -13,11 +13,17 @@ class RyukoClient extends Client {
         this.redditColor = 0xcee3f8;
         this.userAgent = `Ryuko (https://github.com/kyostra/ryuko) v(${pkg.version})`;
         this.mongodb = new Database({
-            username: process.env.DB_USERNAME,
-            password: process.env.DB_PASSWORD,
-            host: process.env.DB_HOST,
-            port: process.env.DB_PORT,
-            dbname: process.env.DB_DBNAME
+            // self host options
+            // username: process.env.DB_USERNAME,
+            // password: process.env.DB_PASSWORD,
+            // host: process.env.DB_HOST,
+            // port: process.env.DB_PORT,
+            // dbname: process.env.DB_DBNAME
+            // atlas options
+            username: process.env.DBA_USERNAME,
+            password: process.env.DBA_PASSWORD,
+            host: process.env.DBA_HOST,
+            dbname: process.env.DBA_DBNAME
         });
     }
 }

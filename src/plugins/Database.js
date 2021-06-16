@@ -7,7 +7,10 @@ const GuildModel = require('../models/Guild.js');
 
 class Database {
     constructor(options={}) {
-        this.URI = `mongodb://${options.username}:${options.password}@${options.host}:${options.port}/${options.dbname}`;
+        // self host uri
+        // this.URI = `mongodb://${options.username}:${options.password}@${options.host}:${options.port}/${options.dbname}`;
+        // atlas host uri
+        this.URI = `mongodb+srv://${options.username}:${options.password}@${options.host}/${options.dbname}`;
         this.models = { roles: RoleModel, users: UserModel, guilds: GuildModel };
         this.cache = { roles: {}, users: {}, guilds: {} };
     }
