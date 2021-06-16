@@ -58,6 +58,9 @@ ryuko.register('logger', 'winston', logger);
 ryuko.unregister('middleware', true);
 ryuko.register('middleware', resolve('middleware'));
 ryuko.register('commands', cmdpath, { groupedCommands: true });
+ryuko.mongodb.load(ryuko).catch((err) => {
+    ryuko.logger.error(chalk.red.bold(`[Mongoose]: ${err}`));
+});
 
 ryuko.on('ready', () => {
     const shards = ryuko.shards.size;
@@ -111,12 +114,6 @@ ryuko.on('ready', () => {
         `Guilds: ${chalk.cyan.bold(guilds)} | ` +
         `Users: ${chalk.cyan.bold(users)}`
     );
-
-    try {
-        ryuko.mongodb.load(ryuko);
-    } catch (err) {
-        ryuko.logger.error(chalk.red.bold(`[Mongoose]: ${err}`));
-    }
 
     ryuko.logger.info(chalk.yellow.bold(`Prefix: ${ryuko.prefix}`));
     ryuko.logger.info(chalk.green.bold('Ryuko Is Ready To Rumble~!'));
