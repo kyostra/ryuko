@@ -16,12 +16,14 @@ class Database {
         return new Promise((resolve, reject) => {
             this.ryuko = ryuko;
             Mongoose.Promise = global.Promise;
-            Mongoose.connect(this.URI, { useNewUrlParser: true }).catch((error) => {
+            Mongoose.connect(this.URI, { 
+                useNewUrlParser: true,
+                useCreateIndex: true,
+                useFindAndModify: false,
+                useUnifiedTopology: true
+            }).catch((error) => {
                 return reject(error);
             });
-            Mongoose.set('useFindAndModify', false);
-            Mongoose.set('useCreateIndex', true);
-            Mongoose.set('useUnifiedTopology', true);
             Mongoose.connection.on('error', (error) => this.ryuko.logger.error(chalk.red.bold(`[DB] Mongoose error: ${error}`)));
             Mongoose.connection.once('open', () => this.ryuko.logger.info(chalk.green.bold('[DB] Mongoose Connected')));
             return resolve(this);
