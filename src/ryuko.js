@@ -52,14 +52,17 @@ const ryuko = new RyukoClient({
     autoreconnect: true
 });
 
-const cmdpath = resolve('commands');
 ryuko.unregister('logger', 'console');
 ryuko.register('logger', 'winston', logger);
 ryuko.unregister('middleware', true);
 ryuko.register('middleware', resolve('middleware'));
-ryuko.register('commands', cmdpath, { groupedCommands: true });
-ryuko.mongodb.load(ryuko).catch((err) => {
-    ryuko.logger.error(chalk.red.bold(`[Mongoose]: ${err}`));
+ryuko.register('commands', resolve('commands'), { groupedCommands: true });
+
+fs.readFile('./res/boot/ascii.txt', 'utf-8', (err, data) => {
+    if (err) {
+        console.log(err);
+    }
+    console.log(data);
 });
 
 ryuko.on('ready', () => {
@@ -92,17 +95,6 @@ ryuko.on('ready', () => {
         { type: 3, name: `${guilds} servers` }
     ];
 
-    ryuko.ascii = () => {
-        fs.readFile('./res/boot/ascii.txt', 'utf-8', (err, data) => {
-            if (err) {
-                console.log(err);
-            }
-            console.log(data);
-        });
-    };
-
-    ryuko.ascii();
-
     ryuko.logger.info(`${chalk.red.bold(ryuko.user.username)} - ${
         firstShardID === lastShardID
         ? `Shard ${firstShardID} is ready!`
@@ -115,16 +107,20 @@ ryuko.on('ready', () => {
         `Users: ${chalk.cyan.bold(users)}`
     );
 
+    ryuko.mongodb.load(ryuko).catch((err) => {
+        ryuko.logger.error(chalk.red.bold(`[Mongoose]: ${err}`));
+    });
+
     ryuko.logger.info(chalk.yellow.bold(`Prefix: ${ryuko.prefix}`));
     ryuko.logger.info(chalk.green.bold('Ryuko Is Ready To Rumble~!'));
 
-    ryuko.changeStatus = () => {
+    const changeStatus = () => {
         const chooseStatus = statuses[~~(Math.random() * statuses.length)];
         ryuko.editStatus({ name: chooseStatus.name, type: chooseStatus.type || 0 });
         ryuko.logger.info(chalk.yellow.bold(`Ryuko's status changed to -"${chooseStatus.name}"`));
     };
 
-    setInterval(() => ryuko.changeStatus(), 120000);
+    setInterval(() => changeStatus(), 120000);
 });
 
 ryuko.on('error', ryuko.logger.error);
