@@ -52,11 +52,11 @@ class StarManager extends Module {
                 if (error) {
                     this.logger.error('Error finding user in DB', error);
                 }
-    
+
                 if (!g || !g.starChannel) {
                     return;
                 }
-    
+
                 this.send(`${g.starChannel}`, `⭐ <#${message.channel.id}> (${message.id})`, { embed: {
                     color: this._client.ryukoColor,
                     author: {
@@ -79,11 +79,11 @@ class StarManager extends Module {
                 if (error) {
                     this.logger.error('Error finding user in DB', error);
                 }
-    
+
                 if (!g || !g.starChannel) {
                     return;
                 }
-    
+
                 this.send(`${g.starChannel}`, `⭐ <#${message.channel.id}> (${message.id})`, { embed: {
                     color: this._client.ryukoColor,
                     author: {
