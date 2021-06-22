@@ -19,6 +19,8 @@ Ryuko is a discord bot created in JavaScript (Node.js). It is currently a projec
 
 ## Setup :
 For `.env` and `.env.example`, leave the values empty for the example file (you need both files).
+* You do not need both Self Host and Atlas values filled in, you can just pick one.
+* Both Self Hosting and Atlas are free (depending on the Atlas tier used), but Atlas is cloud based.
 ```env
 # Bot configuration
 
@@ -56,6 +58,20 @@ API_REDDIT_ID=
 API_REDDIT_SECRET=
 API_REDDIT_REFRESH=
 API_REDDIT_ACCESS=
+```
+
+Don't forget to un-comment the specified URI you are using and comment the one you aren't in `src/plugins/Database.js`.
+```js
+class Database {
+    constructor(options={}) {
+        // self host uri
+        // this.URI = `mongodb://${options.username}:${options.password}@${options.host}:${options.port}/${options.dbname}`;
+        // atlas host uri
+        this.URI = `mongodb+srv://${options.username}:${options.password}@${options.host}/${options.dbname}`;
+        this.models = { roles: RoleModel, users: UserModel, guilds: GuildModel };
+        this.cache = { roles: {}, users: {}, guilds: {} };
+    }
+}
 ```
 
 ### Running the bot :
